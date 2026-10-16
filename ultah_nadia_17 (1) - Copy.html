@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 17th Birthday Nadia 💗</title>
+<style>
+:root{--pink:#ff5eaa;--rose:#ff9bc9;--cream:#fff1f7;--night:#090b1b}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--cream);background:radial-gradient(ellipse at 50% 15%,#35204b 0%,#151329 45%,#080916 100%);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1000px;margin:auto;padding:30px 18px 50px;position:relative;z-index:1}
+.hero{text-align:center;padding:12px 0 18px}
+.kicker{color:#ffafd5;letter-spacing:4px;text-transform:uppercase;font-size:.75rem}
+h1{font-family:Georgia,serif;font-size:clamp(2.6rem,8vw,5.7rem);line-height:1.02;margin:14px 0;color:#fff1f7;text-shadow:0 0 25px #ff4fa588}
+h1 span{color:#ff76b9;font-style:italic}
+.subtitle{max-width:600px;margin:0 auto;color:#e6cddd;line-height:1.8}
+.layout{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;margin-top:18px}
+.card{background:#ffffff0b;border:1px solid #ffb4d533;border-radius:24px;padding:24px;backdrop-filter:blur(8px);box-shadow:0 15px 45px #0003}
+.cake-area{text-align:center;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cake{position:relative;width:240px;height:205px;margin:12px auto 0;filter:drop-shadow(0 18px 20px #ff4f8d22);animation:bob 3s ease-in-out infinite}
+.candle{position:absolute;top:0;left:calc(50% - 5px);width:10px;height:45px;background:repeating-linear-gradient(45deg,#fff 0 7px,#ff79b6 7px 13px);border-radius:3px;z-index:5}
+.flame{position:absolute;top:-24px;left:-3px;width:16px;height:24px;background:radial-gradient(ellipse at 50% 70%,#fff8b5 0 18%,#ffb32e 45%,#ff6d3d 70%,transparent 72%);border-radius:50% 50% 45% 45%;animation:flicker .5s infinite alternate}
+.topcake{position:absolute;top:42px;left:20px;width:200px;height:48px;border-radius:50%;background:#ffe3ef;border:4px solid #ff9fc9;z-index:3}
+.layer{position:absolute;top:64px;left:20px;width:200px;height:70px;border-radius:0 0 18px 18px;background:linear-gradient(90deg,#ff75a8,#ffd3e4 48%,#ff75a8);border-bottom:8px solid #ffb4d0;z-index:2}
+.icing{position:absolute;top:80px;left:20px;width:200px;height:22px;background:#fff0f7;border-radius:0 0 15px 15px;z-index:4;clip-path:polygon(0 0,100% 0,100% 50%,90% 100%,80% 50%,68% 100%,55% 45%,42% 100%,28% 50%,15% 100%,0 55%)}
+.base{position:absolute;top:128px;left:8px;width:224px;height:65px;border-radius:14px 14px 25px 25px;background:linear-gradient(90deg,#b92770,#ff8fbd 50%,#bc286f);border-bottom:7px solid #ffb4d0}
+.base:after{content:"♡ 17 ♡";position:absolute;inset:14px 0;text-align:center;font-family:Georgia,serif;font-size:25px;color:white}
+.berry{position:absolute;top:48px;font-size:20px;z-index:6}.b1{left:48px}.b2{right:48px}.b3{left:110px;top:53px}
+.cake-label{font-family:Georgia,serif;color:#ffc0dc;font-size:1.2rem;margin-top:12px}
+.message h2{font-family:Georgia,serif;font-size:1.8rem;margin:0 0 14px;color:#ffacd2}
+.message p{line-height:1.85;color:#f5dfea}
+.signature{color:#ffacd2;font-family:Georgia,serif;font-style:italic;font-size:1.25rem}
+.gift{margin-top:24px;text-align:center}
+.gift h3{margin:0 0 8px;font-size:1.2rem}
+.gift p{color:#e5cddd;margin:0 0 17px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{border-radius:999px;padding:13px 20px;font-weight:750;transition:transform .2s,box-shadow .2s;border:1px solid transparent}
+.btn:hover{transform:translateY(-3px)}
+.yes{color:#43132e;background:linear-gradient(135deg,#ffc0df,#ff69ad);box-shadow:0 8px 25px #ff5eaa33}
+.no{color:#ffe5f1;background:#ffffff0d;border-color:#ffffff35}
+#result{min-height:34px;margin:17px 0 0;font-weight:700;color:#ffb7d8}
+.footer{text-align:center;color:#a88ca5;font-size:.82rem;margin-top:24px}
+.petal{position:fixed;top:-35px;z-index:10;pointer-events:none;animation:fall linear forwards;filter:drop-shadow(0 2px 3px #0004)}
+.tease{position:fixed;z-index:20;font-size:2.2rem;pointer-events:none;animation:teaseMove 2.8s ease-in-out forwards;white-space:nowrap;text-shadow:0 3px 12px #0008}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(760deg);opacity:.15}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes flicker{from{transform:rotate(-5deg) scale(.94)}to{transform:rotate(5deg) scale(1.08)}}
+@keyframes teaseMove{0%{left:-35%;top:20%;transform:rotate(-15deg)}35%{left:35%;top:38%;transform:rotate(12deg)}70%{left:65%;top:65%;transform:rotate(-8deg)}100%{left:110%;top:78%;transform:rotate(18deg)}}
+@media(max-width:720px){.layout{grid-template-columns:1fr}.card{padding:20px}.cake-area{min-height:320px}.message{order:2}.cake-area{order:1}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">A little surprise, made with love</div>
+    <h1>Happy Birthday<br><span>Nadia</span> ♡</h1>
+    <p class="subtitle">Selamat ulang tahun yang ke-17! Hari spesial untuk seseorang yang semoga selalu punya banyak alasan untuk tersenyum.</p>
+  </header>
+
+  <main class="layout">
+    <section class="card cake-area" aria-label="Kue ulang tahun animasi">
+      <div class="cake">
+        <div class="candle"><div class="flame"></div></div>
+        <div class="topcake"></div><div class="layer"></div><div class="icing"></div>
+        <div class="base"></div>
+        <span class="berry b1">🍓</span><span class="berry b2">🍓</span><span class="berry b3">🌸</span>
+      </div>
+      <div class="cake-label">A sweet cake for Nadia ✨</div>
+      <p class="subtitle">Klik tombol hadiah untuk membuka kejutan kecilmu.</p>
+    </section>
+
+    <section class="card message">
+      <h2>Untuk Nadia, yang ke-17 💗</h2>
+      <p>Selamat ulang tahun, Nadia. Semoga di usia yang baru ini, hari-harimu dipenuhi kebahagiaan, kesehatan, dan hal-hal indah yang selama ini kamu impikan.</p>
+      <p>Terima kasih sudah menjadi seseorang yang begitu istimewa. Semoga senyummu selalu punya alasan untuk hadir, langkahmu dimudahkan, dan semua doa baikmu menemukan jalannya.</p>
+      <p>Kalau aku boleh berharap, semoga aku masih bisa ikut merayakan banyak hari bahagiamu, mendengar ceritamu, dan menjadi salah satu alasan kecil di balik senyummu. Kamu pantas mendapatkan banyak hal baik, hari ini dan seterusnya.</p>
+      <div class="signature">With love, for Nadia ♡</div>
+    </section>
+  </main>
+
+  <section class="card gift">
+    <h3>🎁 Nadia, mau terima kado ulang tahun?</h3>
+    <p>Pilih jawabanmu… tapi pikirkan baik-baik yaa 😚</p>
+    <div class="actions">
+      <button class="btn yes" id="yesBtn">💝 Iya, terima!</button>
+      <button class="btn no" id="noBtn">🙈 Enggak, nggak dulu</button>
+    </div>
+    <div id="result" aria-live="polite"></div>
+  </section>
+  <div class="footer">Dibuat khusus untuk Nadia • 17 tahun penuh cerita ✨</div>
+</div>
+<script>
+const result = document.getElementById('result');
+let flowerTimer = null;
+function makePetals(amount=65){
+  const flowers=['🌸','🌹','🌷','💮','💗','✨'];
+  for(let i=0;i<amount;i++){
+    const el=document.createElement('span');
+    el.className='petal';
+    el.textContent=flowers[Math.floor(Math.random()*flowers.length)];
+    el.style.left=Math.random()*100+'vw';
+    el.style.fontSize=(16+Math.random()*22)+'px';
+    el.style.animationDuration=(4+Math.random()*5)+'s';
+    el.style.animationDelay=(Math.random()*2)+'s';
+    el.style.setProperty('--drift',(Math.random()*220-110)+'px');
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),11500);
+  }
+}
+document.getElementById('yesBtn').addEventListener('click',()=>{
+  result.textContent='YAY! Kado diterima! Semoga hari Nadia seindah bunga-bunga ini 💗🌷';
+  makePetals(90);
+  if(flowerTimer) clearInterval(flowerTimer);
+  flowerTimer=setInterval(()=>makePetals(12),1800);
+  document.getElementById('yesBtn').textContent='💖 Yeay, makasih!';
+});
+document.getElementById('noBtn').addEventListener('click',()=>{
+  result.textContent='Yahhh, ditolak dong 😭 Dasar Nadia, sok jual mahal! WKWK 😝';
+  const tease=document.createElement('div');
+  tease.className='tease';
+  tease.textContent='😝 Yahh, nggak mau? Ciee sok jual mahal! 🏃💨';
+  document.body.appendChild(tease);
+  setTimeout(()=>tease.remove(),3000);
+  makePetals(12);
+});
+document.addEventListener('click',e=>{
+  if(e.target.closest('button')) return;
+  const el=document.createElement('span');
+  el.className='petal';
+  el.textContent=['🌸','💗','🌹'][Math.floor(Math.random()*3)];
+  el.style.left=e.clientX+'px';
+  el.style.top=e.clientY+'px';
+  el.style.fontSize='25px';
+  el.style.animationDuration='3.5s';
+  el.style.setProperty('--drift',(Math.random()*140-70)+'px');
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),4000);
+});
+</script>
+</body>
+</html>
